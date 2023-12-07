@@ -1,20 +1,30 @@
+import React from "react";
+
 export default function AccountSetting() {
   return (
     <div>
-      <div className="section d-block">
-        <h2>Primary Theme</h2>
+      <section className="section d-block">
+        <h2>Personal Info</h2>
         <div className="options-container">
-          <label>Username</label>
-          <input type="text" id="username" placeholder="username"></input>
-          <br />
-          <label>Username</label>
-          <input type="text" id="username" placeholder="username"></input>
-          <br></br>
-          <label>Username</label>
-          <input type="text" id="username" placeholder="username"></input>
-          <br />
+          <div>
+            <label htmlFor="username">Change Username:     </label>
+            <input type="text" id="username" placeholder="Old Username" />
+            <br />
+          </div>
         </div>
-      </div>
+        <button>Save Changes</button>
+      </section>
+
+      <section className="section d-block">
+        <div className="options-container">
+          <div>
+            <label htmlFor="bio">Change Bio:</label>
+            <br />
+            <input type="text" id="bio" placeholder="Type here..." />
+          </div>
+        </div>
+        <button>Save Changes</button>
+      </section>
     </div>
   );
 }
