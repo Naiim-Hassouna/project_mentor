@@ -1,0 +1,80 @@
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: var(--primary-color);
+    &.account-block {
+      display: block;
+    }
+    .label {
+      font-size: 20px;
+      text-align: center;
+    }
+    .username-input {
+      margin-left: 20px;
+      border: 2px solid var(--primary-color);
+      border-radius: 5px;
+      max-width: 300px;
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 16px;
+      display: flex;
+      white-space: pre-wrap;
+      padding: 10px;
+      resize: none;
+      scroll-behavior: smooth;
+      height: 50px;
+    }
+    .bio-input {
+        margin-left: 20px;
+        border: 2px solid var(--primary-color);
+        border-radius: 5px;
+        width: 600px;
+        max-width: 600px;
+        text-align: center;
+        box-sizing: border-box;
+        font-size: 16px;
+        display: flex;
+        white-space: pre-wrap;
+        padding: 10px;
+        resize: none;
+        scroll-behavior: smooth;
+        height: 70px;
+      }
+      
+      
+      @media screen and (max-width: 868px) {
+        .bio-input {
+          width: 500px;
+          max-width: 100%;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        .bio-input {
+          width: 270px;
+          max-width: 100%;
+        }
+      }
+      
+    .col {
+      width: 50%;
+    }
+  }
+  .accountinfo-save{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 40px;
+    color: #fff;
+    border: 0px;
+    background: var(--primary-color);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .accountpageh2{
+    color: var(--text-color);
+  }
