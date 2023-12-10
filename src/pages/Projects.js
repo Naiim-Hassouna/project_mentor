@@ -1,5 +1,8 @@
 import PreviousSearches from "../components/PreviousSearches";
 import ProjectCard from "../components/ProjectCard";
+import React, { useState } from 'react';
+import Pagination from "../components/Pagination";
+
 
 export default function Projects() {
   const projects = [
@@ -65,6 +68,14 @@ export default function Projects() {
     },
   ].sort(() => Math.random() - 0.5);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 10; // Replace with your actual total number of pages
+
+  const handlePageChange = (newPage) => {
+    // Add any necessary logic here, such as fetching data for the new page
+    setCurrentPage(newPage);
+  };
+
   return (
     <div>
       <PreviousSearches />
@@ -74,7 +85,11 @@ export default function Projects() {
           <ProjectCard key={index} project={project} />
         ))}
       </div>
-      <h1>pagination hon</h1>
-    </div>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />    
+      </div>
   );
 }

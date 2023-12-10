@@ -11,13 +11,15 @@ export default function Signup() {
         <div>
           <AccountSetting />
         </div>
-      ) :  (  <div></div>
+      ) : (
+        <div></div>
       )}
       {loggedin === "guest" ? (
         <div>
           <LoginSignup />
         </div>
-      ) :  (  <div></div>
+      ) : (
+        <div></div>
       )}
     </>
   );
