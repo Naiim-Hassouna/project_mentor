@@ -1,0 +1,87 @@
+
+.admin-manage {
+    padding: 20px;
+    color: var(--text-color);
+  }
+  
+  .action-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .admin-form,
+  .project-form {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .admin-form form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-form label,
+  .project-form label {
+    margin-bottom: 5px;
+  }
+  
+  .project-form input{
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    width: 250px;
+  }
+  .admin-form input{
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    width: 400px;
+  }
+  @media screen and (max-width: 544px) {
+    .admin-form input {
+        width: 250px;    
+    }
+  }
+
+  .project-form textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+  }
+  
+  .admin-form button,
+  .project-form button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    width: 200px;
+    justify-self: center;
+    align-self: center;
+  }
+  .proj_input_radio{
+    max-width: 75px;
+    gap: 4px;
+  }
+  

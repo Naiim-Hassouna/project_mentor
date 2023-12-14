@@ -9,6 +9,7 @@
     .label {
       font-size: 20px;
       text-align: center;
+      font-weight: 700;
     }
     .username-input {
       margin-left: 20px;
@@ -78,4 +79,28 @@
   }
   .accountpageh2{
     color: var(--primary-color);
+  }
+  .signoutdiv{
+    width: 100%;
+    display: flex;
+  }
+  .signoutButton{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 25%;
+    width: 60px;
+    height: 40px;
+    padding: auto;
+    margin-left: auto;
+    &:hover {
+        box-shadow: 0 1px 3px var(--shadow-color);
+        cursor: pointer;
+      }
   }

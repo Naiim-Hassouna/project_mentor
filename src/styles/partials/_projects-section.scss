@@ -42,5 +42,14 @@
         color: var(--primary-color);
         margin-top: .75em;
         display: inline-block;
+        width: 60%;
+    }
+    .view-btn-admin{
+        font-size: 1em;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-top: .75em;
+        display: inline-block;
+        width: 20%;
     }
 }

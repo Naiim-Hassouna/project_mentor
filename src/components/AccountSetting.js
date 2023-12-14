@@ -52,7 +52,7 @@ export default function AccountSetting() {
                 <textarea
                   id="username"
                   className="username-input"
-                  placeholder="php Old Username..."
+                  placeholder="Enter New Username..."
                   value={username}
                   onChange={handleUsernameChange}
                   maxLength={30}
@@ -110,6 +110,10 @@ export default function AccountSetting() {
         </div>
         <button className="accountinfo-save">Send</button>
       </section>
+
+      <div className="signoutdiv">
+        <button className="signoutButton">Sign out</button>
+      </div>
     </>
   );
 }
