@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Pagination from "../components/Pagination";
 
 
-export default function Projects() {
+export default function Projects({ loggedin }) {
   const projects = [
     {
       title: "proj 1",
@@ -80,9 +80,9 @@ export default function Projects() {
     <div>
       <PreviousSearches />
       <div className="projects-container">
-        {/* <ProjectCard /> */}
+                {/* <ProjectCard /> */}
         {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          <ProjectCard key={index} project={project} loggedin={loggedin} />
         ))}
       </div>
       <Pagination
@@ -90,6 +90,6 @@ export default function Projects() {
         totalPages={totalPages}
         onPageChange={handlePageChange}
       />    
-      </div>
+    </div>
   );
 }

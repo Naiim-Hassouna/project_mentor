@@ -1,35 +1,27 @@
+import React from "react";
 import AccountSetting from "../components/AccountSetting";
 import AdminManage from "../components/AdminManage";
 import LoginSignup from "../components/LoginSignup";
-import React, { useState } from "react";
 
-export default function Signup() {
-  const [loggedin, setLoggedin] = useState("guest");
-
+export default function Signup({ loggedin, setLoggedin }) {
   return (
     <>
       {loggedin === "user" ? (
         <div>
           <AccountSetting />
         </div>
-      ) : (
-        <div></div>
-      )}
+      ) : null}
       {loggedin === "guest" ? (
         <div>
-          <LoginSignup />
+          <LoginSignup setLoggedin={setLoggedin} />
         </div>
-      ) : (
-        <div></div>
-      )}
+      ) : null}
       {loggedin === "admin" ? (
         <div>
           <AccountSetting />
           <AdminManage />
         </div>
-      ) : (
-        <div></div>
-      )}
+      ) : null}
     </>
   );
 }

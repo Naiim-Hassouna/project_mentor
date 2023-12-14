@@ -1,12 +1,7 @@
+import React from "react";
 import CustomImage from "./CustomImage";
-import Signup from "../pages/Signup";
-import React, { useState } from "react";
 
-export default function ProjectCard({ project }) {
-
-  const [loggedin, setLoggedin] = useState("guest");
-
-
+export default function ProjectCard({ project, loggedin }) {
   return (
     <div className="project-card">
       <CustomImage imgSrc={project.image} pt="65%" />
@@ -18,24 +13,20 @@ export default function ProjectCard({ project }) {
           industry.
         </p>
         <div>
-        {loggedin === "user" ? (
-        <div>
-          <a className="view-btn" href="#!">
-             Details
-          </a>        
-        </div>
-      ) : (
-        <div></div>
-      )}
-      {loggedin === "guest" ? (
-        <div>
-          <a className="view-btn" href="/signup">
+          {loggedin === "user" ? (
+            <div>
+              <a className="view-btn" href="#!">
+                Details
+              </a>
+            </div>
+          ) : null}
+          {loggedin === "guest" ? (
+            <div>
+              <a className="view-btn" href="/signup">
                 Login to View Project
-          </a>
-        </div>
-      ) : (
-        <div></div>
-      )}
+              </a>
+            </div>
+          ) : null}
           {loggedin === "admin" ? (
             <>
               <a className="view-btn" href="#!">
@@ -48,9 +39,7 @@ export default function ProjectCard({ project }) {
                 Delete
               </a>
             </>
-          ) : (
-            <div></div>
-          )}
+          ) : null}
         </div>
       </div>
     </div>
