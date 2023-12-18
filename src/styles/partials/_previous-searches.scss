@@ -55,10 +55,11 @@
     color: var(--text-color);
     width:150px;
     z-index: 1;
-    left: 58%;
+    left: 63%;
     position: absolute;
     border-radius: 25px;
     padding: 10px;
+    font-weight: 700;
   }
 
   .column-filter {
@@ -72,7 +73,22 @@
 
     }
     .tagSearchContainer{
-      width: 330px;
+      width: 450px;
+    }
+    .column-filter {
+        
+      flex: none;
+      margin-bottom: 10px;
+    }
+  }
+  @media (max-width: 400px) {
+    .tab-filter {
+      flex-direction: column;
+      left: 54%;
+
+    }
+    .tagSearchContainer{
+      width: 320px;
     }
     .column-filter {
         
