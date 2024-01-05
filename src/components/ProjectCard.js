@@ -1,23 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CustomImage from "./CustomImage";
 
 export default function ProjectCard({ project, loggedin }) {
   return (
     <div className="project-card">
-      <CustomImage imgSrc={project.image} pt="65%" />
+      <CustomImage imgSrc={project.img} pt="65%" />
       <div className="project-card-info">
-        {/*<img className="auther-img" src={project.authorImg} alt="" />*/}
-        <p className="project-title">{project.title}</p>
+        <p className="project-title">{project.name}</p>
         <p className="project-desc">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
+          {project.description}
         </p>
         <div>
           {loggedin === "user" ? (
             <div>
-              <a className="view-btn" href="#!">
+              {/* Use Link for the "Details" link */}
+              <Link className="view-btn" to={`/projects/${project.id}`}>
                 Details
-              </a>
+              </Link>
             </div>
           ) : null}
           {loggedin === "guest" ? (
@@ -29,9 +29,10 @@ export default function ProjectCard({ project, loggedin }) {
           ) : null}
           {loggedin === "admin" ? (
             <>
-              <a className="view-btn" href="#!">
+              {/* Use Link for the "Details" link */}
+              <Link className="view-btn" to={`/projects/${project.id}`}>
                 Details
-              </a>
+              </Link>
               <a className="view-btn-admin" href="#!">
                 Edit
               </a>

@@ -1,0 +1,59 @@
+
+
+.project-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center; /* Center the content */
+  }
+  
+  .project-detail-name {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0 auto; /* Remove default margin */
+    margin-bottom: 20px;
+    border-radius: 8px; /* Add rounded corners */
+    display: block; /* Make it inline-block to center it horizontally */
+}
+
+  .project-detail-image {
+    width: 300px; /* Set your desired width */
+    height: 300px; /* Set your desired height */
+    display: block; /* Ensures that margin: auto works to center the image */
+    margin: 0 auto; /* Center the image horizontally */
+}
+  
+  .project-detail-description {
+    font-size: 25px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .project-detail-content {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .project-detail-difficulty {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .project-detail-size {
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
