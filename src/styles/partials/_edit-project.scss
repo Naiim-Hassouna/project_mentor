@@ -1,0 +1,61 @@
+// edit-project.scss
+
+.EditProjectTitle{
+    padding: 20px;
+    color: var(--text-color);
+}
+// Container
+.EditProjectContainer {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    color: var(--text-color);
+  }
+  
+  // Form
+  .EditProjectForm {
+    margin-top: 20px;
+  }
+  
+  // Form elements
+  .EditProjectLabel {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .EditProjectInput,
+  .EditProjectTextarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+
+  }
+  .EditProjectSelect {
+    width: 150px;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    margin-left: 10px;
+  }
+  // Button
+  .EditProjectButton {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  
+    &:hover {
+      background-color: rgb(197, 0, 66);
+      
+    }
+  }
+  
