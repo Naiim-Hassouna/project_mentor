@@ -8,7 +8,8 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Settings from "./pages/Settings";
 import Signup from "./pages/Signup";
-import ProjectDetails from "./pages/ProjectDetails"; // Import the ProjectDetails component
+import ProjectDetails from "./pages/ProjectDetails"; 
+import EditProject from "./pages/EditProject"; 
 
 function App() {
   const [loggedin, setLoggedin] = useState("admin");
@@ -26,8 +27,8 @@ function App() {
           <Route path="/projects" element={<Projects loggedin={loggedin} />} />
           <Route path="/settings" element={<Settings loggedin={loggedin} />} />
           <Route path="/signup" element={<Signup loggedin={loggedin} setLoggedin={handleLogin} />} />
-          {/* Add the route for ProjectDetails */}
           <Route path="/projects/:id" element={<ProjectDetails />} />
+          <Route path="/edit-project/:id" element={<EditProject />} />
         </Routes>
       </div>
       <Footer />

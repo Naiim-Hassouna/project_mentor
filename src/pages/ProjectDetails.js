@@ -30,7 +30,7 @@ const ProjectDetails = () => {
   return (
     <div className="project-detail-container">
       <h1 className="project-detail-name">{projectDetails.name}</h1>
-      <img src={projectDetails.img} alt="project pic" className="project-detail-image"  />
+      <img src={`../${projectDetails.img}`} alt="project pic" className="project-detail-image"  />
       <p className="project-detail-description">Description: {projectDetails.description}</p>
       <p className="project-detail-difficulty">Difficulty: {projectDetails.difficulty}</p>
       <p className="project-detail-size">Size: {projectDetails.size}</p>
