@@ -6,11 +6,11 @@ function TagsInput({ onSearch }) {
   const [tags, setTags] = useState([]);
 
   function handleKeyDown(e) {
-    if (e.key !== 'Enter') return;
+    if (e.key !== "Enter") return;
     const value = e.target.value;
     if (!value.trim()) return;
     setTags([...tags, value]);
-    e.target.value = '';
+    e.target.value = "";
   }
 
   function removeTag(index) {
@@ -40,7 +40,7 @@ function TagsInput({ onSearch }) {
         className="tags-search-btn"
         // You can add more styles or icons for the search button
       >
-            <FontAwesomeIcon icon={faSearch} />
+        <FontAwesomeIcon icon={faSearch} />
       </button>
     </>
   );

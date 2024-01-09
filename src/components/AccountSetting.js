@@ -28,12 +28,29 @@ export default function AccountSetting() {
     setIsEditing(false);
   };
 
+  const handleSignOutClick = async () => {
+    try {
+      const response = await fetch("http://localhost/projectmentor_server/logout.php", {
+        method: "GET",
+      });
+
+      if (response.ok) {
+        console.log("User logged out successfully");
+        // TODO: You can add any additional logic after successful logout
+      } else {
+        console.error("Failed to log out");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <h2 className="accountpageh2">Personal Info</h2>
       <div>
-      <ProfileCard onEditClick={handleEditClick} bio={bio} />
-      <br />
+        <ProfileCard onEditClick={handleEditClick} bio={bio} />
+        <br />
       </div>
 
       {isEditing && (
@@ -86,7 +103,9 @@ export default function AccountSetting() {
       </section>
 
       <div className="signoutdiv">
-        <button className="signoutButton">Sign out</button>
+        <button className="signoutButton" onClick={handleSignOutClick}>
+          Sign out
+        </button>
       </div>
     </>
   );
