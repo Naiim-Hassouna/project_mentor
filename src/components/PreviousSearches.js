@@ -3,32 +3,40 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import TagsInput from "./TagsInput";
 
-function PreviousSearches() {
+function PreviousSearches({ onFilterChange }) {
   const [searches, setSearches] = useState(
     JSON.parse(localStorage.getItem("previousSearches")) || []
   );
   const [isTabOpen, setIsTabOpen] = useState(false);
+  const [selectedFilters, setSelectedFilters] = useState({
+    size: "",
+    difficulty: "",
+  });
 
   const toggleTab = () => {
     setIsTabOpen(!isTabOpen);
   };
 
   const handleSearch = (tags) => {
-    // Update the searches array, keeping a maximum of 8 items
     const updatedSearches = [...searches.slice(-5), ...tags].slice(-8);
     setSearches(updatedSearches);
-    // Save to local storage
     localStorage.setItem("previousSearches", JSON.stringify(updatedSearches));
   };
 
   useEffect(() => {
-    // This effect is just to demonstrate the component mounting
     console.log("Component mounted");
   }, []);
 
+  const handleFilterChange = () => {
+    // Trigger the callback with the selected filters
+    onFilterChange(selectedFilters);
+  };
+
   return (
     <div className="previous-searches section">
-      <div className="title1"><h2>Previous Searches: </h2></div>
+      <div className="title1">
+        <h2>Previous Searches: </h2>
+      </div>
       <div className="previous-searches-container">
         {searches.map((search, index) => (
           <div
@@ -56,40 +64,100 @@ function PreviousSearches() {
                 <strong>Size:</strong>
                 <br />
                 <label>
-                  <input type="radio" name="size" value="mini" /> Mini
+                  <input
+                    type="radio"
+                    name="size"
+                    value="mini"
+                    onChange={() =>
+                      setSelectedFilters({
+                        ...selectedFilters,
+                        size: "mini",
+                      })
+                    }
+                  />{" "}
+                  Mini
                 </label>
                 <br />
                 <label>
-                  <input type="radio" name="size" value="standard" /> Standard
+                  <input
+                    type="radio"
+                    name="size"
+                    value="standard"
+                    onChange={() =>
+                      setSelectedFilters({
+                        ...selectedFilters,
+                        size: "standard",
+                      })
+                    }
+                  />{" "}
+                  Standard
                 </label>
                 <br />
                 <label>
-                  <input type="radio" name="size" value="enterprise" /> Enterprise
+                  <input
+                    type="radio"
+                    name="size"
+                    value="enterprise"
+                    onChange={() =>
+                      setSelectedFilters({
+                        ...selectedFilters,
+                        size: "enterprise",
+                      })
+                    }
+                  />{" "}
+                  Enterprise
                 </label>
                 <br />
-                <label>
-                  <input type="radio" name="size" value="any" /> Any
-                </label>
               </div>
               <div className="column-filter">
                 <strong>Difficulty:</strong>
                 <br />
                 <label>
-                  <input type="radio" name="difficulty" value="beginner" /> Beginner
+                  <input
+                    type="radio"
+                    name="difficulty"
+                    value="beginner"
+                    onChange={() =>
+                      setSelectedFilters({
+                        ...selectedFilters,
+                        difficulty: "beginner",
+                      })
+                    }
+                  />{" "}
+                  Beginner
                 </label>
                 <br />
                 <label>
-                  <input type="radio" name="difficulty" value="moderate" /> Moderate
+                  <input
+                    type="radio"
+                    name="difficulty"
+                    value="moderate"
+                    onChange={() =>
+                      setSelectedFilters({
+                        ...selectedFilters,
+                        difficulty: "moderate",
+                      })
+                    }
+                  />{" "}
+                  Moderate
                 </label>
                 <br />
                 <label>
-                  <input type="radio" name="difficulty" value="advanced" /> Advanced
-                </label>
-                <br />
-                <label>
-                  <input type="radio" name="difficulty" value="any" /> Any
+                  <input
+                    type="radio"
+                    name="difficulty"
+                    value="advanced"
+                    onChange={() =>
+                      setSelectedFilters({
+                        ...selectedFilters,
+                        difficulty: "advanced",
+                      })
+                    }
+                  />{" "}
+                  Advanced
                 </label>
               </div>
+              <button onClick={handleFilterChange}>Apply Filters</button>
             </div>
           )}
         </div>

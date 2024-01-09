@@ -12,7 +12,7 @@ import ProjectDetails from "./pages/ProjectDetails";
 import EditProject from "./pages/EditProject"; 
 
 function App() {
-  const [loggedin, setLoggedin] = useState("user");
+  const [loggedin, setLoggedin] = useState("admin");
 
   const handleLogin = (status) => {
     setLoggedin(status);

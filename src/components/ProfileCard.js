@@ -59,7 +59,7 @@ const ProfileCard = ({ onEditClick, bio }) => {
         )}
       </div>
       <div className="profile-info">
-        <h2>Username</h2>
+        <h2>Naiim</h2>
         <p>{bio}</p>
         <br />
         <button onClick={handleEditClick}>{editButtonText}</button>

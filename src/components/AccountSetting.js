@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ProfileCard from "./ProfileCard";
 
 export default function AccountSetting() {
-  const [bio, setBio] = useState("");
+  const [bio, setBio] = useState("This is my ISD Project: The ProjectMentor!");
   const [review, setReview] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
