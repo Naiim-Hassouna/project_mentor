@@ -4,42 +4,40 @@ import ProfileCard from "./ProfileCard";
 export default function AccountSetting() {
   const [bio, setBio] = useState("");
   const [review, setReview] = useState("");
-  const [isEditing, setIsEditing] = useState(false); // New state to manage editing state
-
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleBioChange = (event) => {
-    const newBio = event.target.value.slice(0, 100); // Limit to 100 characters
+    const newBio = event.target.value.slice(0, 100);
     setBio(newBio);
   };
 
   const handleReviewChange = (event) => {
-    const newReview = event.target.value.slice(0, 500); // Limit to 500 characters
+    const newReview = event.target.value.slice(0, 500);
     setReview(newReview);
   };
 
   const handleEditClick = () => {
-    // Toggle the editing state
     setIsEditing(!isEditing);
   };
 
   const handleSaveClick = () => {
-    // Handle save logic (you can add your save logic here)
-    setIsEditing(false); // Turn off editing mode after saving
+    // TODO: Add logic to save the updated bio to the server/database
+    // You can make an API call or use any storage mechanism here
+    // For now, let's just log the updated bio
+    console.log("Saving Bio:", bio);
+    setIsEditing(false);
   };
 
   return (
     <>
       <h2 className="accountpageh2">Personal Info</h2>
       <div>
-        <ProfileCard onEditClick={handleEditClick} />
-        <br />
+      <ProfileCard onEditClick={handleEditClick} bio={bio} />
+      <br />
       </div>
 
       {isEditing && (
         <>
-          {/* Display the sections only when editing */}
-          
-
           <section className="section account-block">
             <div className="options-container">
               <div>

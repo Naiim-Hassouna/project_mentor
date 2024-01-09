@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const ProfileCard = ({ onEditClick }) => {
+const ProfileCard = ({ onEditClick, bio }) => {
   const [showIconMenu, setShowIconMenu] = useState(false);
   const [selectedIcon, setSelectedIcon] = useState(() => {
     const storedIcon = localStorage.getItem("selectedIcon");
@@ -29,7 +29,7 @@ const ProfileCard = ({ onEditClick }) => {
     }
 
     // Change the button text
-    //setEditButtonText(editButtonText === "Edit" ? "Cancel" : "Edit");
+    setEditButtonText(editButtonText === "Edit" ? "Cancel" : "Edit");
   };
 
   return (
@@ -60,10 +60,7 @@ const ProfileCard = ({ onEditClick }) => {
       </div>
       <div className="profile-info">
         <h2>Username</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean m
-        </p>
+        <p>{bio}</p>
         <br />
         <button onClick={handleEditClick}>{editButtonText}</button>
       </div>

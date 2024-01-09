@@ -4,7 +4,6 @@ import ProjectCard from '../components/ProjectCard';
 import Pagination from '../components/Pagination';
 
 export default function Projects({ loggedin }) {
-  const projectsPerPage = 6;
   const [projects, setProjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0); // Updated to start with 0 totalPages

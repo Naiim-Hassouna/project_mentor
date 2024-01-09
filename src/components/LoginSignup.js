@@ -13,19 +13,48 @@ const LoginSignup = () => {
     confirmPassword: "", // New state for confirm password
   });
 
-  const handleSubmit = () => {
-    // Perform login or signup logic based on the current action and credentials
-    if (action === "Login") {
-      // Implement login logic
-      console.log("Logging in with:", credentials);
-    } else {
-      // Implement signup logic
-      if (credentials.password === credentials.confirmPassword) {
-        console.log("Signing up with:", credentials);
+  const handleSubmit = async () => {
+    try {
+      // Perform login or signup logic based on the current action and credentials
+      if (action === "Login") {
+        const response = await fetch('http://localhost/projectmentor_server/login.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(credentials),
+        });
+
+        if (response.ok) {
+          console.log('User logged in successfully');
+          // Handle session creation here
+        } else {
+          console.error('Failed to log in');
+        }
       } else {
-        console.error("Passwords do not match");
-        // You may want to handle the case where passwords do not match
+        // Implement signup logic
+        if (credentials.password === credentials.confirmPassword) {
+          const queryParams = new URLSearchParams(credentials);
+          const response = await fetch(
+            `http://localhost/projectmentor_server/registration.php?${queryParams.toString()}`,
+            {
+              method: 'GET',
+            }
+          );
+
+          if (response.ok) {
+            console.log('User registered successfully');
+            // You can add additional logic here if needed
+          } else {
+            console.error('Failed to register user');
+          }
+        } else {
+          console.error("Passwords do not match");
+          // You may want to handle the case where passwords do not match
+        }
       }
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -49,6 +78,7 @@ const LoginSignup = () => {
       </div>
       <div className="inputs">
         {action === "Login" ? (
+          // Login form
           <div>
             <div className="input">
               <img src={email_icon} alt="" />
@@ -79,6 +109,7 @@ const LoginSignup = () => {
             </div>
           </div>
         ) : (
+          // Signup form
           <div>
             <div className="input">
               <img src={user_icon} alt="" />
