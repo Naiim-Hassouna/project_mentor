@@ -2,15 +2,10 @@ import React, { useState } from "react";
 import ProfileCard from "./ProfileCard";
 
 export default function AccountSetting() {
-  const [username, setUsername] = useState("");
   const [bio, setBio] = useState("");
   const [review, setReview] = useState("");
   const [isEditing, setIsEditing] = useState(false); // New state to manage editing state
 
-  const handleUsernameChange = (event) => {
-    const newUsername = event.target.value.slice(0, 30); // Limit to 30 characters
-    setUsername(newUsername);
-  };
 
   const handleBioChange = (event) => {
     const newBio = event.target.value.slice(0, 100); // Limit to 100 characters
@@ -43,26 +38,7 @@ export default function AccountSetting() {
       {isEditing && (
         <>
           {/* Display the sections only when editing */}
-          <section className="section account-block">
-            <div className="options-container">
-              <div>
-                <label htmlFor="username" className="label">
-                  Change Username ({username.length}/30)
-                </label>
-                <textarea
-                  id="username"
-                  className="username-input"
-                  placeholder="Enter New Username..."
-                  value={username}
-                  onChange={handleUsernameChange}
-                  maxLength={30}
-                ></textarea>
-              </div>
-            </div>
-            <button className="accountinfo-save" onClick={handleSaveClick}>
-              Save
-            </button>
-          </section>
+          
 
           <section className="section account-block">
             <div className="options-container">

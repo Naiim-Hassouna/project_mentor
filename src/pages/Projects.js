@@ -14,26 +14,20 @@ export default function Projects({ loggedin }) {
   };
 
   useEffect(() => {
-    // Fetch data from the backend when the component mounts or when the page changes
     fetchData();
   }, [currentPage]);
 
   const fetchData = async () => {
     try {
-      // Fetch data from your PHP backend
       const response = await fetch(`http://localhost/projectmentor_server/projects_fetch.php?page=${currentPage}`);
       const data = await response.json();
 
-      // Assuming your API response contains a 'projects' array
       setProjects(data.projects);
-
-      // Set the total pages directly from the backend response
       setTotalPages(data.totalPages);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
-
   return (
     <div>
       <PreviousSearches />
